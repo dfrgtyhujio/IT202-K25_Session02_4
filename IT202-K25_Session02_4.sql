@@ -13,7 +13,7 @@ create table customers (
 
 create table orders (
     order_id int primary key,
-    order_date datetime default (getdate()),
+    order_date timestamp default current_timestamp,
     total_amount decimal(10,2) not null,
     customer_id int not null,
     foreign key (customer_id) references customers (customer_id)
